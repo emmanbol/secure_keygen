@@ -34,15 +34,15 @@ app.get("/", async(req, res, next) => {
     //res.send("whao, dis is good34")
 	try{
 		let kd = await par.kg()
-		//res.send(kd)
-		res.json(kd)
+		res.send(`<body style='margin: 35px'>${kd}</body>`)
+		//res.json(kd)
 
 		//console.log(kd)
 
-		let ram = JSON.parse(JSON.stringify(kd))
+		/*let ram = JSON.parse(JSON.stringify(kd))
 		ram.forEach( dd => {
 			console.log(`${dd.address} - ${dd.mnemonic}`)
-		})
+		})*/
 		
 	}
 	catch(err){

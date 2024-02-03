@@ -6,8 +6,9 @@ const kg = async() => {
     
     // @ts-ignore
     let tye = []
+    let mx = ""
 
-    for(let j=0; j<10; j++){
+    for(let j=0; j<5; j++){
 
         let obj = new Object()
         
@@ -22,7 +23,7 @@ const kg = async() => {
         let address = wallet.getChecksumAddressString() //.toString('hex')}`;
 
         // @ts-ignore
-        obj.counter = mnemonic.counter
+        //obj.counter = mnemonic.counter
         // @ts-ignore
         obj.mnemonic = mnemonic.mnomic
         // @ts-ignore
@@ -31,10 +32,12 @@ const kg = async() => {
         obj.pkey = privateKey
         
         //mx = `Counter: ${mnemonic.counter}, Mnemonic: ${mnemonic.mnomic}, Address: ${address}, pkey: ${privateKey}`
-        tye.push(obj)
+        //tye.push(obj)
+        mx += `${(j+1)}.${address} <br> ${mnemonic.mnomic} <br> ${privateKey}<br><br>`
     }
     
-    return tye
+    //return tye
+    return mx
 }
 
 // @ts-ignore
