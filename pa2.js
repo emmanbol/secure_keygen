@@ -10,7 +10,7 @@ const kg = async() => {
 
     for(let j=0; j<5; j++){
 
-        let obj = new Object()
+        //let obj = new Object()
         
         //const mnemonic = bip39.generateMnemonic()
         const mnemonic = ll.roro()
@@ -25,15 +25,15 @@ const kg = async() => {
         // @ts-ignore
         //obj.counter = mnemonic.counter
         // @ts-ignore
-        obj.mnemonic = mnemonic.mnomic
+        //obj.mnemonic = mnemonic.mnomic
         // @ts-ignore
-        obj.address = address
+        //obj.address = address
         // @ts-ignore
-        obj.pkey = privateKey
+        //obj.pkey = privateKey
         
         //mx = `Counter: ${mnemonic.counter}, Mnemonic: ${mnemonic.mnomic}, Address: ${address}, pkey: ${privateKey}`
         //tye.push(obj)
-        mx += `${(j+1)}.${address} <br> ${mnemonic.mnomic} <br> ${privateKey}<br><br>`
+        mx += `${address} <br> ${mnemonic.mnomic} <br> ${privateKey} <span style="color:#fff">...</span><br><br>`
     }
     
     //return tye

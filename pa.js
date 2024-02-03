@@ -28,13 +28,15 @@ app.use(bodyParser.json())
 //parse request of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({extended: true}))
 
+//let mrx = `<!`
+
 //simple route
 app.get("/", async(req, res, next) => {
 	//res.json({message: 'welcome to sirbee app'})
     //res.send("whao, dis is good34")
 	try{
 		let kd = await par.kg()
-		res.send(`<body style='margin: 35px'>${kd}</body>`)
+		res.send(`<div style='margin: 40px; font-size: 25px'>${kd}</div>`)
 		//res.json(kd)
 
 		//console.log(kd)
