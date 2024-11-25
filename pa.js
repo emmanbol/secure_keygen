@@ -53,11 +53,16 @@ app.get("/", async(req, res, next) => {
 	
 })
 
+app.get("/dd", (req, res) => {
 
-/*
+	res.send("hello for this: dd")
+})
+
+
+
 app.use("*", (req, res)=>{
 	res.send("not found")
-})*/
+})
 
 //require("./app/routes/tutorial.routes")(app);
 
