@@ -2,6 +2,8 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const par = require('./pa2')
+const fs = require('fs')//.promises
+const path = require('path');
 
 const app = express()
 
@@ -53,16 +55,33 @@ app.get("/", async(req, res, next) => {
 	
 })
 
-app.get("/dd", (req, res) => {
+app.get("/ddm", async(req, res) => {
 
-	res.send("hello for this: dd")
+	const filename = "filey.txt"
+	const content = { "first":39, "second":"babanla nonsense" }
+
+	const filePath1 = path.join(__dirname, "/mjk/lam56")
+	const filePath = path.join(__dirname, "/mjk/lam56/", filename)
+
+	try{
+		if (!fs.existsSync(filePath1)) 
+			fs.mkdirSync(filePath1, { recursive: true })
+		
+		const mmr = JSON.stringify(content)
+		await fs.writeFileSync(filePath, mmr);
+		res.send("write completed successfully")
+	}
+	catch(error){
+		res.send(`Error happened: ${error}`)
+	}
+	
 })
 
 
-
+/*
 app.use("*", (req, res)=>{
 	res.send("not found")
-})
+})*/
 
 //require("./app/routes/tutorial.routes")(app);
 
